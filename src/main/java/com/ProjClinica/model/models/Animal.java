@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="TAB_ANIMAL") //declarando pro banco o nome da tabela
+@Table (name="TAB_ANIMAL") 
 
 public class Animal {
 
@@ -19,7 +19,7 @@ public class Animal {
 	private String Sexo;
 	private String Nome_dono;
 	private String Telefone;
-
+	private String Endereco;
 
 
 
@@ -87,8 +87,13 @@ public class Animal {
 		Telefone = telefone;
 	}
 
-
-
+	@Column(name = "ANIMAL_ENDERECO", length =60,  nullable = false)
+	public String getEndereco() {
+		return Endereco;
+	}
+	public void setEndereco(String endereco) {
+		Endereco = endereco;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -113,8 +118,12 @@ public class Animal {
 		return true;
 	}
 	@Override
-	public String toString(){
-		return "Usuario [id=" + id + ", nome_animal=" + Nome_animal + ", especie=" + Especie + ", raça=" + Raca
-				+ ", sexo=" + Sexo  + ", nome_dono=" + Nome_dono  + ", telefone=" + Telefone +"]";
+	public String toString() {
+		return "Animal [id=" + id + ", Nome_animal=" + Nome_animal + ", Especie=" + Especie + ", Raca=" + Raca
+				+ ", Sexo=" + Sexo + ", Nome_dono=" + Nome_dono + ", Telefone=" + Telefone + ", Endereco=" + Endereco
+				+ "]";
 	}
+	
+	
+	
 }
